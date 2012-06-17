@@ -8,7 +8,6 @@ DAME.SetFloatPrecision(3)
 tab1 = "\t"
 tab2 = "\t\t"
 tab3 = "\t\t\t"
-tab4 = "\t\t\t\t"
 
 exportOnlyCSV = as3.tolua(VALUE_ExportOnlyCSV)
 flixelPackage = as3.tolua(VALUE_FlixelPackage)
@@ -191,13 +190,13 @@ if exportOnlyCSV == false then
 	baseFileText = baseFileText..tab2.."obj.angle = angle;\n"
 	
 	baseFileText = baseFileText..tab2.."// Only override the facing value if the class didn't change it from the default.\n"
-	baseFileText = baseFileText..tab2.."if( obj.facing == FlxObject.RIGHT )\n"
+	baseFileText = baseFileText..tab2.."if ( obj.facing == FlxObject.RIGHT )\n"
 	baseFileText = baseFileText..tab3.."obj.facing = flipped ? FlxObject.LEFT : FlxObject.RIGHT;\n"
 	baseFileText = baseFileText..tab2.."obj.scrollFactor.x = scrollX;\n"
 	baseFileText = baseFileText..tab2.."obj.scrollFactor.y = scrollY;\n"
 	baseFileText = baseFileText..tab2.."group.add(obj);\n"
 	
-	baseFileText = baseFileText..tab2.."if(onAddCallback != null)\n"
+	baseFileText = baseFileText..tab2.."if (onAddCallback != null)\n"
 	baseFileText = baseFileText..tab3.."onAddCallback(obj, group);\n"
 	baseFileText = baseFileText..tab2.."return obj;\n"
 	baseFileText = baseFileText..tab1.."}\n\n"
